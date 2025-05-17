@@ -1,41 +1,128 @@
-*{
+/* Reset default styles and set box-sizing */
+* {
     margin: 0;
     padding: 0;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    box-sizing: border-box;
 }
 
-.nav_layout {
-    width: 100%;
-    height: 100vh;
-    background-image: url(DawnKC\ Background.jpg);
-    background-size: cover;
-    overflow: hidden;
-    position: relative;
-    background-position: center;
-}
-
-.logodesign {
-    width: 85%;
-    height: 15%;
-    margin: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
 .logo {
-    margin: 10px;
-    padding: 10px;
-    width: 280px;
-    height: 100px;
+    margin: 30px;
+    padding: 30px;
+    width: 350px;
+    height: 150px;
     cursor: pointer;
+    transition: transform 1s ease-in-out;
 }
 
-.navbar {
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* this is the background/*---- */
+.nav-bar {
+    width: 100%;
+    height: 100vh;
+    background-image: url('DawnKC\ Background.jpg');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 85%;
     height: 15%;
     margin: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+    padding: 25px;
+}
+
+.nav-links ul {
+    list-style: none;
+}
+
+.nav-links ul li {
+    display: inline-block;
+    margin: 0 15px;
+    padding: 8px 12px;
+}
+
+.nav-links ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links ul li a:hover {
+    color: #ffcc00;
+}
+
+main {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+main h1 {
+    font-size: 2.5em;
+    color: #00695c;
+    margin-bottom: 15px;
+}
+
+main p {
+    font-size: 1.2em;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Footer styling */
+footer {
+    background-color: #004d40;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.95em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+    }
+
+    .nav-links {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .nav-links ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .logo {
+        margin: 0 auto 20px;
+        display: block;
+    }
 }
